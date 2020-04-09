@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_name">KotlinSkeleton</string>
+
+    <string name="main.change.button">Change text</string>
+    <string name="main.next.button">Next activity</string>
+
+    <string name="second.title">Second activity</string>
+</resources>
