@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import androidx.core.content.ContextCompat
 import hu.renes.kotlin.R
+import hu.renes.kotlin.domain.model.Candidate
 import hu.renes.kotlin.injection.qualifier.ApplicationContext
 import javax.inject.Inject
 
