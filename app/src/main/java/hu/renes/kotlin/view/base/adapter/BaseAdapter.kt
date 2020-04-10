@@ -8,7 +8,7 @@ import java.util.*
 abstract class BaseAdapter<T : IListTypeProvider> : RecyclerView.Adapter<BaseViewHolder<T>>,
     View.OnClickListener {
     val context: Context
-    private var items: MutableList<T>
+    private var items: List<T>
     private lateinit var onClickListener: BaseViewHolder.OnItemClickListener
 
     constructor(context: Context) {
@@ -59,51 +59,9 @@ abstract class BaseAdapter<T : IListTypeProvider> : RecyclerView.Adapter<BaseVie
         return items
     }
 
-    fun setItems(items: MutableList<T>) {
+    fun setItems(items: List<T>) {
         this.items = items
         notifyDataSetChanged()
-    }
-
-    fun addItem(item: T) {
-        items.add(item)
-        notifyItemInserted(items.size - 1)
-    }
-
-    fun addItem(position: Int, item: T) {
-        items.add(position, item)
-        notifyItemInserted(position)
-    }
-
-    fun addItems(items: List<T>?) {
-        this.items.addAll(items!!)
-        notifyDataSetChanged()
-    }
-
-    fun removeItem(item: T) {
-        if (items.contains(item)) {
-            val position = items.indexOf(item)
-            items.remove(item)
-            notifyItemRemoved(position)
-        }
-    }
-
-    fun removeItem(position: Int) {
-        items.removeAt(position)
-        notifyItemRemoved(position)
-    }
-
-    fun removeAllItems() {
-        val size = items.size
-        items.clear()
-        notifyItemRangeRemoved(0, size)
-    }
-
-    fun updateItem(oldItem: T, newItem: T) {
-        if (items.contains(oldItem)) {
-            val position = items.indexOf(oldItem)
-            items[position] = newItem
-            notifyItemChanged(position)
-        }
     }
 
     fun notifyItemChanged(item: T) {
