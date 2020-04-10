@@ -124,5 +124,4 @@ abstract class BaseAdapter<T : IListTypeProvider> : RecyclerView.Adapter<BaseVie
     fun setOnClickListener(onClickListener: BaseViewHolder.OnItemClickListener) {
         this.onClickListener = onClickListener
     }
-
 }
