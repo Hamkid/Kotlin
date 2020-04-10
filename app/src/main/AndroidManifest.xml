@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="hu.renes.kotlin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name="hu.renes.kotlin.KotlinApplication"
         android:allowBackup="false"
@@ -21,8 +22,7 @@
         </activity>
 
         <activity
-            android:name="hu.renes.kotlin.view.second.SecondActivity"
-            android:screenOrientation="portrait" />
+            android:name="hu.renes.kotlin.view.second.SecondActivity" />
     </application>
 
 </manifest>

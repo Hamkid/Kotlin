@@ -1,8 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
     <string name="app_name">Kotlin</string>
 
+    <string name="button.retry">Retry</string>
+
     <string name="main.change.button">Change text</string>
     <string name="main.next.button">Next activity</string>
+    <string name="main.error">Something unexpected happened, please try again!</string>
 
     <string name="second.title">Second activity</string>
 </resources>

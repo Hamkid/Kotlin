@@ -7,7 +7,7 @@ import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import dagger.Module
 import dagger.Provides
-import hu.renes.kotlin.domain.service.KotlinService
+import hu.renes.kotlin.domain.service.JobService
 import hu.renes.kotlin.injection.qualifier.ApplicationContext
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -26,7 +26,7 @@ import hu.renes.kotlin.BuildConfig.BASE_URL
 class NetworkModule {
     @Provides
     @Singleton
-    fun provideWebSzigno(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
+    fun provideKotlin(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
@@ -82,8 +82,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideKotlinService(retrofit: Retrofit): KotlinService {
-        return KotlinService.Factory.createService(retrofit)
+    fun provideKotlinService(retrofit: Retrofit): JobService {
+        return JobService.Factory.createService(retrofit)
     }
 
 
