@@ -4,6 +4,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'checkstyle'
 apply plugin: 'pmd'
+apply plugin: 'de.mobilej.unmock'
 
 android {
     flavorDimensions "default"
@@ -44,6 +45,12 @@ android {
     }
     androidExtensions {
         experimental = true
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    unMock {
+        keepStartingWith "android.net.Uri"
     }
 }
 

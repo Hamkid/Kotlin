@@ -18,10 +18,10 @@ class MainActivityPresenter @Inject constructor(
     private val jobInteractor: JobInteractor
 ) :
     MvpBasePresenter<MainActivityView>() {
-    private lateinit var disposables: CompositeDisposable
+    private var disposables: CompositeDisposable? = null
 
     fun initView() {
-        disposables.add(
+        disposables?.add(
             jobInteractor.getExperience()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -40,8 +40,8 @@ class MainActivityPresenter @Inject constructor(
     }
 
     override fun detachView() {
-        if (!disposables.isDisposed()) {
-            disposables.dispose()
+        if (disposables != null && disposables!!.isDisposed()) {
+            disposables?.dispose()
         }
         super.detachView()
     }
