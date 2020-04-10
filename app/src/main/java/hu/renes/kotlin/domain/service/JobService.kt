@@ -1,7 +1,8 @@
 package hu.renes.kotlin.domain.service
 
 import hu.renes.kotlin.domain.model.Candidate
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
+
 import retrofit2.Retrofit
 import retrofit2.http.GET
 
