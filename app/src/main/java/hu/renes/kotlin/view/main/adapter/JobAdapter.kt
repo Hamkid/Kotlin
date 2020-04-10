@@ -11,7 +11,7 @@ import javax.inject.Inject
 class JobAdapter @Inject constructor(@ApplicationContext context: Context) :
     BaseAdapter<JobViewModel>(context) {
 
-    private var onItemClickListener: JobViewHolder.OnItemClickedListener? = null
+    private var onItemClickListener: JobViewHolder.OnItemClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
         val view = LayoutInflater
@@ -25,7 +25,7 @@ class JobAdapter @Inject constructor(@ApplicationContext context: Context) :
         (holder as JobViewHolder).setOnItemClickListener(onItemClickListener)
     }
 
-    fun setOnItemClickListener(onItemClickListener: JobViewHolder.OnItemClickedListener) {
+    fun setOnItemClickListener(onItemClickListener: JobViewHolder.OnItemClickListener) {
         this.onItemClickListener = onItemClickListener
     }
 }

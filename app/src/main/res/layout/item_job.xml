@@ -11,7 +11,7 @@
     tools:ignore="PrivateResource">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/containerItemLayout"
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
@@ -38,9 +38,9 @@
             android:layout_marginEnd="@dimen/general.distance.12dp"
             android:ellipsize="end"
             android:gravity="start"
-            android:textStyle="bold"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/font.size.20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/logo"

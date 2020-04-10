@@ -12,10 +12,6 @@ abstract class BaseViewHolder<T>(
     protected val context: Context
     private var clickableView: View
 
-    interface OnItemClickListener {
-        fun listItemClicked(v: View?, position: Int)
-    }
-
     abstract fun bind(data: T)
 
     init {

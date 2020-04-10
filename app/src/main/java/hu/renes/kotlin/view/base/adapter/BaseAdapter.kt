@@ -5,11 +5,9 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-abstract class BaseAdapter<T : IListTypeProvider> : RecyclerView.Adapter<BaseViewHolder<T>>,
-    View.OnClickListener {
+abstract class BaseAdapter<T : IListTypeProvider> : RecyclerView.Adapter<BaseViewHolder<T>> {
     val context: Context
     private var items: List<T>
-    private lateinit var onClickListener: BaseViewHolder.OnItemClickListener
 
     constructor(context: Context) {
         this.context = context
@@ -19,16 +17,6 @@ abstract class BaseAdapter<T : IListTypeProvider> : RecyclerView.Adapter<BaseVie
     constructor(context: Context, items: MutableList<T>) {
         this.context = context
         this.items = items
-    }
-
-    constructor(
-        context: Context,
-        items: MutableList<T>,
-        onClickListener: BaseViewHolder.OnItemClickListener
-    ) {
-        this.context = context
-        this.items = items
-        this.onClickListener = onClickListener
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -68,18 +56,5 @@ abstract class BaseAdapter<T : IListTypeProvider> : RecyclerView.Adapter<BaseVie
         if (items.contains(item)) {
             notifyItemChanged(items.indexOf(item))
         }
-    }
-
-    override fun onClick(v: View) {
-        val vh: BaseViewHolder<*> = v.tag as BaseViewHolder<*>
-        onClickListener.listItemClicked(v, vh.position)
-    }
-
-    fun getOnClickListener(): BaseViewHolder.OnItemClickListener? {
-        return onClickListener
-    }
-
-    fun setOnClickListener(onClickListener: BaseViewHolder.OnItemClickListener) {
-        this.onClickListener = onClickListener
     }
 }
