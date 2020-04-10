@@ -20,9 +20,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name="hu.renes.kotlin.view.second.SecondActivity" />
     </application>
-
 </manifest>
