@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/general.distance.xbig"
+    android:layout_margin="@dimen/mtrl_card_spacing"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="@dimen/general.distance.xmini"
+    app:cardElevation="@dimen/general.distance.xmini"
+    tools:ignore="PrivateResource">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerItemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:clickable="true"
+        android:focusable="true">
+
+        <View
+            android:id="@+id/label"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/companyName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/general.distance.72dp"
+            android:layout_height="@dimen/general.distance.72dp"
+            android:padding="@dimen/general.distance.8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/companyName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/companyName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/general.distance.12dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="3"
+            android:textSize="@dimen/font.size.big"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/logo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Apple" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

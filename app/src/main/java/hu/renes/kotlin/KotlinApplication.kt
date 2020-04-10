@@ -2,6 +2,7 @@ package hu.renes.kotlin
 
 import android.app.Application
 import android.content.Context
+import com.squareup.picasso.Picasso
 import hu.renes.kotlin.injection.component.ApplicationComponent
 import hu.renes.kotlin.injection.component.DaggerApplicationComponent
 import hu.renes.kotlin.injection.module.ApplicationModule
@@ -30,6 +31,12 @@ class KotlinApplication : Application() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
+
+        val picasso = Picasso.Builder(this)
+            .loggingEnabled(BuildConfig.DEBUG)
+            .indicatorsEnabled(false)
+            .build()
+        Picasso.setSingletonInstance(picasso)
     }
 
     fun getApplicationComponent(): ApplicationComponent {

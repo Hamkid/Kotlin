@@ -24,6 +24,11 @@ import hu.renes.kotlin.BuildConfig.BASE_URL
 
 @Module
 class NetworkModule {
+
+    companion object {
+        private const val TIMEOUT_IN_SEC = 30
+    }
+
     @Provides
     @Singleton
     fun provideKotlin(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
@@ -84,10 +89,5 @@ class NetworkModule {
     @Singleton
     fun provideKotlinService(retrofit: Retrofit): JobService {
         return JobService.Factory.createService(retrofit)
-    }
-
-
-    companion object {
-        private const val TIMEOUT_IN_SEC = 30
     }
 }
