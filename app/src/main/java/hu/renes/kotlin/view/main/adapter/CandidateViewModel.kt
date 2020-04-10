@@ -18,6 +18,3 @@ data class JobViewModel(
         return R.layout.item_job
     }
 }
-
-
-

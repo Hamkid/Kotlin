@@ -9,7 +9,6 @@ import androidx.core.content.pm.PackageInfoCompat
 import hu.renes.kotlin.injection.qualifier.ApplicationContext
 import javax.inject.Inject
 
-
 class DeviceInfo @Inject constructor(@ApplicationContext private val context: Context) {
 
     fun getAndroidVersion(): Int {
@@ -30,7 +29,6 @@ class DeviceInfo @Inject constructor(@ApplicationContext private val context: Co
         } catch (e: PackageManager.NameNotFoundException) {
             return ""
         }
-
     }
 
     fun getVersionCode(): Int {
@@ -53,7 +51,5 @@ class DeviceInfo @Inject constructor(@ApplicationContext private val context: Co
                 + ", model: " + Build.MODEL
                 + ", android_version_name: " + getAndroidVersionName()
                 + ", android_version: " + getAndroidVersion())
-
     }
-
 }

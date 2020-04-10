@@ -1,9 +1,7 @@
 package hu.renes.kotlin.view.base.adapter
 
 import android.content.Context
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
 
 abstract class BaseAdapter<T : IListTypeProvider> : RecyclerView.Adapter<BaseViewHolder<T>> {
     val context: Context

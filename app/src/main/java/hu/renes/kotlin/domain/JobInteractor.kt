@@ -8,6 +8,6 @@ import javax.inject.Inject
 class JobInteractor @Inject constructor(private val JobService: JobService) {
 
     fun getExperience(): Single<Candidate> {
-        return JobService.getExperience();
+        return JobService.getExperience()
     }
 }

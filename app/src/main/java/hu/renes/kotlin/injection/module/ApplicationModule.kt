@@ -14,7 +14,6 @@ class ApplicationModule(val app: Application) {
         return app
     }
 
-
     @Provides
     @ApplicationContext
     fun provideContext(): Context {

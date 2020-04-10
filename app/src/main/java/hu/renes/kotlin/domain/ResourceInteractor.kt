@@ -7,7 +7,6 @@ import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import androidx.core.content.ContextCompat
 import hu.renes.kotlin.R
-import hu.renes.kotlin.domain.model.Candidate
 import hu.renes.kotlin.injection.qualifier.ApplicationContext
 import javax.inject.Inject
 
@@ -18,7 +17,11 @@ class ResourceInteractor @Inject constructor(@ApplicationContext private val con
     }
 
     fun convertDpToPixel(dp: Int): Float {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), getResources().displayMetrics)
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            dp.toFloat(),
+            getResources().displayMetrics
+        )
     }
 
     fun getResources(): Resources {
@@ -80,7 +83,6 @@ class ResourceInteractor @Inject constructor(@ApplicationContext private val con
         } catch (e: Exception) {
             return 0 // No resource found for given name
         }
-
     }
 
     fun getStringArray(arrayResourceId: Int): Array<String> {

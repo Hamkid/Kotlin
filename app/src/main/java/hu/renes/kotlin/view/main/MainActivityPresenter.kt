@@ -11,7 +11,6 @@ import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 import javax.inject.Inject
 
-
 class MainActivityPresenter @Inject constructor(
     private val resourceInteractor: ResourceInteractor,
     private val jobInteractor: JobInteractor

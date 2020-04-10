@@ -16,7 +16,6 @@ import hu.renes.kotlin.view.main.adapter.JobViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-
 class MainActivity : BaseActivity<MainActivityView, MainActivityPresenter>(), MainActivityView,
     JobViewHolder.OnItemClickListener {
 
@@ -75,7 +74,6 @@ class MainActivity : BaseActivity<MainActivityView, MainActivityPresenter>(), Ma
         recylerView.setNestedScrollingEnabled(false)
         recylerView.addItemDecoration(DividerItemDecoration(this, 0))
         jobAdapter.setOnItemClickListener(this)
-
     }
 
     override fun onItemClicked(companyUri: Uri) {

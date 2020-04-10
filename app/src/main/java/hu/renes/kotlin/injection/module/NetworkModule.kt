@@ -7,6 +7,7 @@ import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import dagger.Module
 import dagger.Provides
+import hu.renes.kotlin.BuildConfig.BASE_URL
 import hu.renes.kotlin.domain.service.JobService
 import hu.renes.kotlin.injection.qualifier.ApplicationContext
 import okhttp3.OkHttpClient
@@ -18,9 +19,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-
-import hu.renes.kotlin.BuildConfig.BASE_URL
-
 
 @Module
 class NetworkModule {
