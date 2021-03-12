@@ -6,8 +6,8 @@ import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import androidx.core.content.ContextCompat
+import dagger.hilt.android.qualifiers.ApplicationContext
 import hu.renes.kotlin.R
-import hu.renes.kotlin.injection.qualifier.ApplicationContext
 import javax.inject.Inject
 
 class ResourceInteractor @Inject constructor(@ApplicationContext private val context: Context) {

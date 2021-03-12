@@ -7,8 +7,8 @@ import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import hu.renes.kotlin.R
-import hu.renes.kotlin.injection.component.ActivityComponent
 import hu.renes.kotlin.view.base.BaseActivity
 import hu.renes.kotlin.view.main.adapter.CandidateViewModel
 import hu.renes.kotlin.view.main.adapter.JobAdapter
@@ -16,6 +16,7 @@ import hu.renes.kotlin.view.main.adapter.JobViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<MainActivityView, MainActivityPresenter>(), MainActivityView,
     JobViewHolder.OnItemClickListener {
 
@@ -24,10 +25,6 @@ class MainActivity : BaseActivity<MainActivityView, MainActivityPresenter>(), Ma
 
     @Inject
     lateinit var jobAdapter: JobAdapter
-
-    override fun injectActivity(activityComponent: ActivityComponent) {
-        getActivityComponent().inject(this)
-    }
 
     override fun createPresenter(): MainActivityPresenter {
         return mainPresenter
@@ -62,16 +59,16 @@ class MainActivity : BaseActivity<MainActivityView, MainActivityPresenter>(), Ma
     }
 
     private fun dismissSwipeLoading() {
-        if (swipeLayout != null && swipeLayout.isRefreshing()) {
-            swipeLayout.setRefreshing(false)
+        if (swipeLayout != null && swipeLayout.isRefreshing) {
+            swipeLayout.isRefreshing = false
         }
     }
 
     private fun initAdapter() {
         val layoutManager = LinearLayoutManager(this)
-        recylerView.setAdapter(jobAdapter)
-        recylerView.setLayoutManager(layoutManager)
-        recylerView.setNestedScrollingEnabled(false)
+        recylerView.adapter = jobAdapter
+        recylerView.layoutManager = layoutManager
+        recylerView.isNestedScrollingEnabled = false
         recylerView.addItemDecoration(DividerItemDecoration(this, 0))
         jobAdapter.setOnItemClickListener(this)
     }

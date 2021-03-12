@@ -1,9 +1,9 @@
 package hu.renes.kotlin.view.main.adapter
 
 import android.content.Context
-import android.view.LayoutInflater
 import android.view.ViewGroup
-import hu.renes.kotlin.injection.qualifier.ApplicationContext
+import dagger.hilt.android.qualifiers.ApplicationContext
+import hu.renes.kotlin.utility.extensions.inflate
 import hu.renes.kotlin.view.base.adapter.BaseAdapter
 import hu.renes.kotlin.view.base.adapter.BaseViewHolder
 import javax.inject.Inject
@@ -14,10 +14,7 @@ class JobAdapter @Inject constructor(@ApplicationContext context: Context) :
     private var onItemClickListener: JobViewHolder.OnItemClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
-        val view = LayoutInflater
-            .from(parent.context)
-            .inflate(viewType, parent, false)
-        return JobViewHolder(view, context)
+        return JobViewHolder(parent.inflate(viewType), context)
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<JobViewModel>, position: Int) {

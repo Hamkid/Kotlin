@@ -6,7 +6,7 @@ import android.graphics.Point
 import android.os.Build
 import android.view.WindowManager
 import androidx.core.content.pm.PackageInfoCompat
-import hu.renes.kotlin.injection.qualifier.ApplicationContext
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 class DeviceInfo @Inject constructor(@ApplicationContext private val context: Context) {
