@@ -6,9 +6,9 @@ import io.reactivex.rxjava3.core.Single
 
 import javax.inject.Inject
 
-class JobInteractor @Inject constructor(private val JobService: JobService) {
+class JobInteractor @Inject constructor(private val jobService: JobService) {
 
     fun getExperience(): Single<Candidate> {
-        return JobService.getExperience()
+        return jobService.getExperience()
     }
 }

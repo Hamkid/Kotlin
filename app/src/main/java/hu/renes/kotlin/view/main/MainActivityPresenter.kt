@@ -40,9 +40,7 @@ class MainActivityPresenter @Inject constructor(
     }
 
     override fun detachView() {
-        if (disposables != null && disposables!!.isDisposed()) {
-            disposables?.dispose()
-        }
+        disposables?.dispose()
         super.detachView()
     }
 }
